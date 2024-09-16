@@ -41,4 +41,9 @@ public items:any[] = [
       // LIMPANDO CAMPO NOME
       this.nome = "";
     }
+
+    remover(posicao:number){
+      console.log(posicao);
+      this.items.splice(posicao,1);
+    }
 }
