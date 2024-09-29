@@ -5,9 +5,17 @@ import { IonicModule } from '@ionic/angular';
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  standalone: true,
-  imports: [IonicModule],
 })
 export class HomePage {
-  constructor() {}
+  constructor() { }
+  public notaA: number | undefined;
+  public notaB: number | undefined;
+  public media: number | undefined;
+  public situacao: string = "";
+  calcularMedia() {
+    if (this.notaA && this.notaB) {
+      this.media = (this.notaA + this.notaB) / 2;
+      this.situacao = this.media >= 7 ? 'Aprovado' : 'Reprovado';
+    }
+  }
 }
